@@ -1,3 +1,3 @@
-import TransactionMap from "@fixit/template-transaction-map";
+import TransactionMap from "./components/TransactionMap";
 
 export default TransactionMap;
