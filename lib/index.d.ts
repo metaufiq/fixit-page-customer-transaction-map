@@ -1,2 +1,2 @@
-declare const example = 1;
-export default example;
+import TransactionMap from "@fixit/template-transaction-map";
+export default TransactionMap;
