@@ -135,6 +135,7 @@ const TransactionMap = (props: mainProps) => {
 
   return (
     <CommonTransactionMap
+      control={formData.control}
       bottomButtonBarLabel='Lanjutkan'
       locationName=''
       locationNameDetail=''
