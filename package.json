@@ -1,0 +1,29 @@
+{
+  "author": "Taufiq",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "files": [
+    "lib/",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "tsc": "rm -r ./lib && tsc -p ./tsconfig.json",
+    "start": "tsc && node lib/run"
+  },
+  "pre-commit": [
+    "tsc"
+  ],
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-native": "0.64.2"
+  },
+  "dependencies": {
+    "@fixit/template-transaction-map": "github:metaufiq/fixit-template-transaction-map"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.10",
+    "pre-commit": "^1.2.2",
+    "react": "17.0.1",
+    "react-native": "0.64.2"
+  }
+}
