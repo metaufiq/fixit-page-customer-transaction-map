@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
 declare const service: {
-    GoogleMapsAPI: AxiosInstance;
+    GoogleMaps: AxiosInstance;
 };
 export default service;
