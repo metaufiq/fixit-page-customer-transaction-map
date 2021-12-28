@@ -1,6 +1,6 @@
 import {AxiosInstance, AxiosRequestConfig} from 'axios';
 import { GOOGLE_MAPS_API_KEY } from 'react-native-dotenv';
-import GoogleMapsApi from '../services/GoogleMapsAPI';
+import service from '..';
 
 const setGoogleMapsAPIKey = async (config: AxiosRequestConfig) => {
   switch (config.method) {
@@ -14,7 +14,7 @@ const setGoogleMapsAPIKey = async (config: AxiosRequestConfig) => {
 
 const setInterceptor = (serv: AxiosInstance) => {
   serv.interceptors.request.use(function (config) {
-    if (config.baseURL === GoogleMapsApi.defaults.baseURL) {
+    if (config.baseURL === service.GoogleMaps.defaults.baseURL) {
       return new Promise(async resolve => {
         config = await setGoogleMapsAPIKey(config);
         resolve(config);

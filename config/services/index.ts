@@ -1,10 +1,10 @@
 import {AxiosInstance} from 'axios';
 import requestConfig from './api/request';
 import responseConfig from './api/response';
-import GoogleMapsAPI from './services/GoogleMapsAPI';
+import GoogleMaps from './services/GoogleMaps';
 
 const service = {
-  GoogleMapsAPI,
+  GoogleMaps,
 };
 
 interface ServiceInstance {
