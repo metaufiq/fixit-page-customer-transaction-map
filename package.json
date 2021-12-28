@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "tsc": "rm -r ./lib && tsc -p ./tsconfig.json",
+    "tsc:watch": "tsc -w",
     "start": "tsc && node lib/run"
   },
   "pre-commit": [
