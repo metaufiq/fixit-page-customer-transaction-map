@@ -1,5 +1,5 @@
-import GoogleMapsApi from "../../config/services/services/GoogleMapsAPI";
 import {DetailMapResponse} from '@fixit/fixit-common-types/lib/response/map/detail'
+import service from "../../config/services";
 
 
 const detail = async (data: {
@@ -7,7 +7,7 @@ const detail = async (data: {
   longitude: string;
 }): Promise<DetailMapResponse> => {
   const params = {latlng: data.latitude.concat(`,${data.longitude}`)};
-  const res = await GoogleMapsApi.get('', {
+  const res = await service.GoogleMaps.get('', {
     params,
   });
 
