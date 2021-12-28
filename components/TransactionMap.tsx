@@ -93,11 +93,11 @@ const TransactionMap = (props: mainProps) => {
         );
       },
       (e: any) => {
-        Alert.alert('gagal', JSON.stringify(e));
+        Alert.alert('Gagal', 'Periksa Kembali Jaringan dan Akses Lokasi Kamu');
       },
       {
-        enableHighAccuracy: true,
-        timeout: 5000,
+        enableHighAccuracy: false,
+        timeout: 50000,
         maximumAge: 10000,
       },
     );
