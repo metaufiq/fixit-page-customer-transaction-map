@@ -7,5 +7,5 @@ interface mainProps {
         transaction: Transaction;
     }>, any>;
 }
-declare const TransactionMap: (props: mainProps) => JSX.Element;
+declare const TransactionMap: (props: mainProps) => JSX.Element | undefined;
 export default TransactionMap;

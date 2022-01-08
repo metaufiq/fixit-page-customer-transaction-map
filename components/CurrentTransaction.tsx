@@ -11,7 +11,7 @@ interface mainProps{
   navigation: NavigationProp<any, any>;
   route: RouteProp<Record<any, { transaction: Transaction }>, any>;
 };
-const NewTransaction = (props: mainProps) => {
+const CurrentTransaction = (props: mainProps) => {
     const { transaction } = props.route.params;
     const { detail } = props.route.params!.transaction;
     const { customer_location } = detail;
@@ -67,4 +67,4 @@ const NewTransaction = (props: mainProps) => {
     );
 };
 
-export default NewTransaction;
+export default CurrentTransaction;

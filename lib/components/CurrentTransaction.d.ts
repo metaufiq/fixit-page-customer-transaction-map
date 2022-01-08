@@ -7,5 +7,5 @@ interface mainProps {
         transaction: Transaction;
     }>, any>;
 }
-declare const NewTransaction: (props: mainProps) => JSX.Element;
-export default NewTransaction;
+declare const CurrentTransaction: (props: mainProps) => JSX.Element;
+export default CurrentTransaction;
