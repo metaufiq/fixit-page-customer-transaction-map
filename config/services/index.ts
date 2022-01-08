@@ -1,17 +1,14 @@
 import {AxiosInstance} from 'axios';
 import requestConfig from './api/request';
 import responseConfig from './api/response';
-import GoogleMaps from './services/GoogleMaps';
+import services from './service';
 
-const service = {
-  GoogleMaps,
-};
 
 interface ServiceInstance {
   [key: string]: AxiosInstance;
 }
 
-const serviceTemp: ServiceInstance = service;
+const serviceTemp: ServiceInstance = services;
 
 for (let key in serviceTemp) {
   let serv: AxiosInstance = serviceTemp[key];
@@ -19,4 +16,4 @@ for (let key in serviceTemp) {
   responseConfig.setInterceptor(serv);
   // Do something with value
 }
-export default service;
+export default services;
