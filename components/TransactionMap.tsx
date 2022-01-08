@@ -40,6 +40,7 @@ const TransactionMap = (props: mainProps) => {
       if (res?.results.length === 0) {
         return;
       }
+
       setLocationName(
         `${res?.results[0]?.address_components[1]?.short_name}, ${res?.results[0]?.address_components[0]?.short_name}`,
       );
@@ -137,8 +138,8 @@ const TransactionMap = (props: mainProps) => {
     <CommonTransactionMap
       control={formData.control}
       bottomButtonBarLabel='Lanjutkan'
-      locationName=''
-      locationNameDetail=''
+      locationName={locationName}
+      locationNameDetail={locationNameDetail}
       mapData={mapData}
       navigation={props.navigation}
       serviceLocation={serviceLocation}
