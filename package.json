@@ -26,7 +26,7 @@
     "axios": "^0.24.0",
     "@react-native-community/geolocation": "^2.0.2",
     "@react-navigation/native": "^5.9.8",
-    "react-native-dotenv": "^3.3.1"
+    "react-native-config": "^1.4.5"
   },
   "dependencies": {
     "@fixit/template-transaction-map": "github:metaufiq/fixit-template-transaction-map"
@@ -44,6 +44,6 @@
     "@types/react": "17.0.1",
     "@types/react-native": "^0.64.13",
     "@fixit/fixit-common-types": "github:metaufiq/fixit-common-types",
-    "@types/react-native-dotenv": "github:metaufiq/fixit-dotenv-typecript-types"
+    "react-native-config": "^1.4.5"
   }
 }

@@ -1,11 +1,11 @@
 import {AxiosInstance, AxiosRequestConfig} from 'axios';
-import { GOOGLE_MAPS_API_KEY } from 'react-native-dotenv';
+import Config from 'react-native-config';
 import service from '..';
 
 const setGoogleMapsAPIKey = async (config: AxiosRequestConfig) => {
   switch (config.method) {
     case 'get':
-      config.params.key = GOOGLE_MAPS_API_KEY;
+      config.params.key = Config['GOOGLE_MAPS_API_KEY'];
       break;
   }
 
