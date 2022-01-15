@@ -7,11 +7,11 @@ import Geolocation from '@react-native-community/geolocation';
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 import Transaction from '../config/types/domain/transaction';
 
-interface mainProps{
+interface Props{
   navigation: NavigationProp<any, any>;
   route: RouteProp<Record<any, { transaction: Transaction }>, any>;
 };
-const TransactionOTW = (props: mainProps) => {
+const TransactionOTW = (props: Props) => {
     const { transaction } = props.route.params;
     const { detail } = props.route.params!.transaction;
     const { customer_location } = detail;
@@ -48,11 +48,11 @@ const TransactionOTW = (props: mainProps) => {
     }, [getInnitialMapData]);
 
     const onSubmit = ()=>{
-
+      props.navigation.goBack()
     }
     return (
     <CommonTransactionMap
-        bottomButtonBarLabel='Lanjutkan'
+        bottomButtonBarLabel='Tutup'
         locationName={detail.customer_location.address.value }
         locationNameDetail={customer_location.address.detail}
         mapData={mapData}
