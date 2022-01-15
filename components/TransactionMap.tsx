@@ -1,21 +1,32 @@
 
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 import Transaction from '../config/types/domain/transaction';
-import CurrentTransaction from './CurrentTransaction';
+import TransactionOTW from './TransactionOTW';
 import NewTransaction from './NewTransaction';
+import { Status } from '@fixit/fixit-common-types/lib/domain/transaction';
 
-interface mainProps{
+interface Props{
   navigation: NavigationProp<any, any>;
   route: RouteProp<Record<any, { transaction: Transaction }>, any>;
 };
-const TransactionMap = (props: mainProps) => {
+
+
+type TransactionComponent = {
+  [key in Status]: (props:Props) =>JSX.Element;
+};
+
+const TransactionComponent: TransactionComponent = {
+  onTheWay: TransactionOTW,
+  new: NewTransaction,
+  onProgress: TransactionOTW,
+  finished: TransactionOTW
+}
+
+const TransactionMap = (props: Props) => {
   let { transaction } = props.route.params!;
 
-  if (transaction.status === 'current') {
-    return CurrentTransaction(props);
-  }else if (transaction.status === 'new') {
-    return NewTransaction(props);
-  }
+
+  return TransactionComponent[transaction.status](props);
 };
 
 export default TransactionMap;
