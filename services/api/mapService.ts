@@ -7,7 +7,7 @@ const detail = async (data: {
   longitude: string;
 }): Promise<DetailMapResponse> => {
   const params = {latlng: data.latitude.concat(`,${data.longitude}`)};
-  const res = await service.GoogleMaps.get('', {
+  const res = await service.GoogleMaps.get('/json', {
     params,
   });
 
