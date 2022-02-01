@@ -15,37 +15,7 @@ const TransactionOTW = (props: Props) => {
     const { transaction } = props.route.params;
     const { detail } = props.route.params!.transaction;
     const { customer_location } = detail;
-    const [mapData, setMapData] = React.useState<Region>({
-        latitude: 0,
-        longitude: 0,
-        latitudeDelta: 0,
-        longitudeDelta: 0,
-    });
-    
-    const getInnitialMapData = React.useCallback(async () => {
-        Geolocation.getCurrentPosition(
-          async position => {
-            setMapData({
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude,
-              latitudeDelta: 0,
-              longitudeDelta: 0,
-            });
-          },
-          (e: any) => {
-            Alert.alert('Gagal', 'Periksa Kembali Jaringan dan Akses Lokasi Kamu');
-          },
-          {
-            enableHighAccuracy: false,
-            timeout: 50000,
-            maximumAge: 10000,
-          },
-        );
-      }, []);
-    
-    React.useEffect(() => {
-        getInnitialMapData();
-    }, [getInnitialMapData]);
+    const [mapData, setMapData] = React.useState<Region>(customer_location.map);
 
     const onSubmit = ()=>{
       props.navigation.goBack()
