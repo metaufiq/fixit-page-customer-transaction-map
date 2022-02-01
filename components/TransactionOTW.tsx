@@ -1,9 +1,7 @@
 
 import * as React from 'react';
-import { Alert } from 'react-native';
 import CommonTransactionMap from '@fixit/template-transaction-map';
 import { Region } from 'react-native-maps';
-import Geolocation from '@react-native-community/geolocation';
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 import Transaction from '../config/types/domain/transaction';
 
