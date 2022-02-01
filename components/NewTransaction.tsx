@@ -62,7 +62,7 @@ const NewTransaction = (props: mainProps) => {
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
         {
           title: 'Location Permission',
-          message: 'MyMapApp needs access to your location',
+          message: 'FixIt needs access to your location',
           buttonPositive: 'ok',
         },
       );
