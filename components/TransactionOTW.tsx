@@ -36,7 +36,11 @@ const TransactionOTW = (props: Props) => {
     const { transaction } = props.route.params;
     const { detail } = props.route.params!.transaction;
     const { customer_location } = detail;
-    const [mapData, setMapData] = React.useState<Region>(customer_location.map);
+    const [mapData, setMapData] = React.useState<Region>({
+      ...customer_location.map,
+      latitudeDelta: 0,
+      longitudeDelta:0
+    });
 
     const {value: locationName, detail: locationDetail} = getCustomerAddress(transaction);
     const onSubmit = ()=>{
